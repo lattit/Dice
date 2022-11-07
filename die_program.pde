@@ -7,6 +7,7 @@ int yPadding;
 int x;
 int y;
 int total;
+int average;
 
 void setup() {
   noLoop();
@@ -26,6 +27,7 @@ void draw() {
       myDie.roll();
       myDie.show();
       total+=myDie.face;
+      average=total/(rows*cols);
       x+=diceSize+xPadding;
     }
     y+=(diceSize+yPadding);
@@ -33,8 +35,15 @@ void draw() {
   }
   System.out.println(total);
   fill (0);
-  text(total, width/2, height);
+  text(total, width/1.5, height);
+   text("Total=", width/1.86, height);
   fill (255);
+
+  System.out.println(average);
+  fill (0);
+  text(average, width/2.5, height);
+  text("Average=", width/4, height);
+  fill (250);
 }
 
 void mousePressed()
